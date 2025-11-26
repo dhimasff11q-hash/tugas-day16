@@ -1,0 +1,39 @@
+.image-container {
+  /* Langkah Kunci 1: Menjadikan wadah sebagai referensi posisi */
+  position: relative;
+  width: 250px; /* Atur lebar sesuai kebutuhan */
+  height: 350px; /* Atur tinggi sesuai kebutuhan (Aspek rasio poster) */
+  overflow: hidden; /* Penting agar angka yang keluar frame terpotong */
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.poster-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.number-overlay {
+  /* Langkah Kunci 2: Posisi absolut */
+  position: absolute;
+  bottom: 0;
+  left: 0;
+
+  /* Langkah Kunci 3: Gaya Angka */
+  font-size: 150px; /* Ukuran sangat besar */
+  font-weight: 900; /* Extra bold */
+  line-height: 1; /* Hapus spasi baris ekstra */
+
+  /* Warna dan Outline (Efek stroke) */
+  color: black; /* Warna isi angka */
+  -webkit-text-stroke: 4px white; /* Untuk browser berbasis Webkit (Chrome, Safari) */
+  text-stroke: 4px white; /* Standar CSS */
+
+  /* Penyesuaian posisi agar angka terpotong sedikit (Translate) */
+  transform: translate(-10px, 15px);
+
+  /* Pastikan angka berada di atas gambar */
+  z-index: 10;
+}
